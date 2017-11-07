@@ -1,0 +1,18 @@
+<div>
+  <h1>Github Score</h1>
+  <form (submit)='onSubmit()' name='formData' #formData='ngForm'>
+    Github Username: <input type='text' required name='username' [(ngModel)]='myusername' #username='ngModel'><br><br>
+    <button [disabled] = 'formData.invalid' type="submit">Calculate my Github Score</button>
+  </form>
+  <br>
+</div>
+
+
+<div>
+  <h2>Your Score: {{score}} </h2>
+  <h3 *ngIf = 'score < 20' style='color:red;'> Needs Work!</h3>
+  <h3 *ngIf = 'score >= 20 && score < 50' style='color: orange'>A decent start!</h3>
+  <h3 *ngIf = 'score >= 50 && score < 100' style='color: black'>Doing good!</h3>
+  <h3 *ngIf = 'score >= 100 && score < 200' style='color: green'>Great job!</h3>
+  <h3 *ngIf = 'score >= 200' style='color: blue'>Github Elite!</h3>
+</div>
